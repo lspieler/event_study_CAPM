@@ -39,6 +39,7 @@ def calcualte_AR(data,start_estimate, end_estimate, symbol, end_pred):
 
     # make regression model 
     model = sm.OLS(y, X1).fit()
+    print(model.summary())
     alpha = model.params[0]
     beta = model.params[1]
 
@@ -60,7 +61,7 @@ def main():
     #plt.show()
 
     
-    ar = calcualte_AR(data, start_estimate=  "2020-03-17", end_estimate="2020-06-30", symbol="AAPL", end_pred="2021-12-31" )
+    ar = calcualte_AR(data, start_estimate=  "2020-03-17", end_estimate="2020-06-30", symbol="AMZN", end_pred="2021-12-31" )
     plt.plot(ar)
     plt.show()
 
